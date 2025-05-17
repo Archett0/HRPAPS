@@ -1,22 +1,27 @@
-### 1.structure
+# HRPAPS - HDB Resale Price Analysis and Prediction System
+
+### 1.📁 Project Structure
+
+```text
 ├─.gitignore
 ├─README.md
 ├─requirements.txt
 ├─notebooks
-|     ├─00_tmp.ipynb
-|     └ 01_data_ingestion.ipynb
+│     ├─00_tmp.ipynb
+│     └─01_data_ingestion.ipynb
 ├─kafkaStream
-|      ├─scripts_consumer_predictor_gcs_model.py (producer)
-|      └scripts_producer_gcs.py (consumer)
+│     ├─scripts_consumer_predictor_gcs_model.py (consumer)
+│     └─scripts_producer_gcs.py (producer)
 ├─Data_Ingestion_Processing
-|             ├─Data_Ingestion.py
-|             └Data_Processing.py
+│     ├─Data_Ingestion.py
+│     └─Data_Processing.py
 ├─Data_Analytics_n_Machine_Learning
-|                 ├─APL_Generate_Data_n_Predict.py
-|                 ├─APL_Model.py
-|                 ├─APL_Model_Check.py
-|                 ├─APL_TSF_Generate_n_Predict.py
-|                 └APL_TSF_Model.py
+│     ├─APL_Generate_Data_n_Predict.py
+│     ├─APL_Model.py
+│     ├─APL_Model_Check.py
+│     ├─APL_TSF_Generate_n_Predict.py
+│     └─APL_TSF_Model.py
+
 
 
 ### 3.kafka stream run commands
