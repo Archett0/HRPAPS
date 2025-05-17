@@ -5,10 +5,6 @@
 ```text
 ├─.gitignore
 ├─README.md
-├─requirements.txt
-├─notebooks
-│     ├─00_tmp.ipynb
-│     └─01_data_ingestion.ipynb
 ├─kafkaStream
 │     ├─scripts_consumer_predictor_gcs_model.py (consumer)
 │     └─scripts_producer_gcs.py (producer)
