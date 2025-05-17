@@ -21,23 +21,46 @@
 │     ├─APL_Model_Check.py
 │     ├─APL_TSF_Generate_n_Predict.py
 │     └─APL_TSF_Model.py
+```
+### 2. Batch Run Commands
 
+#### 2.1 Data Ingestion Commands to Run on GCS
+```shell
+gcloud dataproc jobs submit pyspark gs://hrpaps-bucket/code/Data_Ingestion.py --cluster=dataproc-sg-cluster --region=asia-southeast1 --properties=spark.submit.deployMode=cluster
+gcloud dataproc jobs submit pyspark gs://hrpaps-bucket/code/Data_Processing.py --cluster=dataproc-sg-cluster --region=asia-southeast1 --properties=spark.submit.deployMode=cluster
+```
 
+#### 2.2 Regression Model Training to Run on GCS
+```shell
+gcloud dataproc jobs submit pyspark gs://hrpaps-bucket/code/APL_Model.py --cluster=dataproc-sg-cluster --region=asia-southeast1 --properties=spark.submit.deployMode=cluster
+gcloud dataproc jobs submit pyspark gs://hrpaps-bucket/code/APL_Model_Check.py --cluster=dataproc-sg-cluster --region=asia-southeast1 --properties=spark.submit.deployMode=cluster
+gcloud dataproc jobs submit pyspark gs://hrpaps-bucket/code/APL_Generate_Data_n_Predict.py --cluster=dataproc-sg-cluster --region=asia-southeast1 --properties=spark.submit.deployMode=cluster
+```
 
-### 3.kafka stream run commands
+#### 2.3 Time Series Forecast Model Training to Run on GCS
+```shell
+gcloud dataproc jobs submit pyspark gs://hrpaps-bucket/code/APL_TSF_Model.py --cluster=dataproc-sg-cluster --region=asia-southeast1 --properties=spark.submit.deployMode=cluster
+gcloud dataproc jobs submit pyspark gs://hrpaps-bucket/code/APL_TSF_Generate_n_Predict.py --cluster=dataproc-sg-cluster --region=asia-southeast1 --properties=spark.submit.deployMode=cluster
+```
+
+### 3. Kafka Stream Run Commands
 based on gcp kafka cluster and model, and should upload procuder and consumer to gcp also
+
 #### 3.1 pruducer run commands on gcp shell
+```shell
 gsutil cp gs://hrpaps-bucket/scripts/consumer_predictor_gcs_model.py .
 pip install kafka-python pandas xgboost google-cloud-storage
 python3 consumer_predictor_gcs_model.py
+```
+
 #### 3.2 consumer run commands on gcp shell
+```shell
 gsutil cp gs://hrpaps-bucket/scripts/consumer_predictor_gcs_model.py .
 pip install kafka-python pandas xgboost google-cloud-storage
 python3 consumer_predictor_gcs_model.py
-
-
-
+```
 
 ### 5.Contract
-github: https://github.com/Archett0/HRPAPS
-email：
+
+- Main Github repo: https://github.com/Archett0/HRPAPS
+- Frontend Github repo: https://github.com/Seven0730/HRPAPS
