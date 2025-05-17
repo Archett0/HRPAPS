@@ -60,7 +60,7 @@ pip install kafka-python pandas xgboost google-cloud-storage
 python3 consumer_predictor_gcs_model.py
 ```
 
-### 5.Contract
+### 5. Contact
 
 - Main Github repo: https://github.com/Archett0/HRPAPS
 - Frontend Github repo: https://github.com/Seven0730/HRPAPS
