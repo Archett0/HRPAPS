@@ -1,6 +1,6 @@
 # HRPAPS - HDB Resale Price Analysis and Prediction System
 
-### 1.📁 Project Structure
+### 1. Project Structure
 
 ```text
 ├─.gitignore
